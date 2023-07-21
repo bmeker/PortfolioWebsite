@@ -7,26 +7,19 @@ body {
     overflow: hidden; 
 }
 
-/* .imgCon{
-    overflow: hidden;
-    position: absolute;
-} */
-
 #bg_image{
-    overflow: hidden; 
-    position: absolute; 
-    z-index: 1;
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
 }
 
-#bg_mask{
+:root{
+    --hue-deg: 0deg;    /* Only Usedd for Color Change of Shirt */
+}
+
+#bg_shirt{
     z-index: 2;
-    /* overflow: hidden; 
-    position: absolute; 
-    -webkit-mask-image: url(../images/shirtMask.png); 
-    mask-image: url(../images/shirtMask.png);
-    -webkit-mask-repeat: no-repeat; 
-    mask-repeat: no-repeat;   */
-    filter: hue-rotate(120deg) saturate(1);
+    filter: hue-rotate(var(--hue-deg)) saturate(1);
 }
 
 button{
@@ -55,7 +48,7 @@ button{
 #btnA {
     top: 20vh; left: 40vh;
     animation: animBtnA 7s alternate infinite ease-in-out;
-    background: linear-gradient(90deg, lightskyblue 0%, lightskyblue 50%, white 50%, white 100%);
+    background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%);
 }
 
 /* Button Animation */
@@ -70,7 +63,7 @@ button{
 #btnK {
     bottom: 40vh; left: 20vh;
     animation: animBtnK 7s alternate infinite ease-in-out;
-    background: linear-gradient(90deg, sienna 0%, sienna 50%, white 50%, white 100%);
+    background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%);
 }
 
 @keyframes animBtnK {
@@ -84,7 +77,7 @@ button{
 #btnR { 
     bottom: 10vh; left: 30vh;
     animation: animBtnR 7s alternate infinite ease-in-out;
-    background: linear-gradient(90deg, cyan 0%, cyan 50%, white 50%, white 100%);
+    background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%);
 }
 
 @keyframes animBtnR {
@@ -98,7 +91,7 @@ button{
 #btnP {
     top: 25vh; right: 37vh;
     animation: animBtnP 7s alternate infinite ease-in-out;
-    background: linear-gradient(90deg, white 0%, white 50%, indianred 50%, indianred 100%);
+    background: linear-gradient(90deg, white 0%, white 50%, rgb(219, 206, 160) 50%, rgb(219, 206, 160) 100%);
 }
 
 @keyframes animBtnP {
@@ -112,7 +105,7 @@ button{
 #btnG { 
     top: 55vh; right: 21vh;
     animation: animBtnG 7s alternate infinite ease-in-out;
-    background: linear-gradient(90deg, white 0%, white 50%, khaki 50%, khaki 100%);
+    background: linear-gradient(90deg, white 0%, white 50%, rgb(196, 217, 156) 50%, rgb(196, 217, 156) 100%);
 }
 
 @keyframes animBtnG {
@@ -126,7 +119,7 @@ button{
 #btnC { 
     bottom: 10vh; right: 31vh;
     animation: animBtnC 7s alternate infinite ease-in-out; 
-    background: linear-gradient(90deg, white 0%, white 50%, chartreuse 50%, chartreuse 100%);
+    background: linear-gradient(90deg, white 0%, white 50%, rgb(155, 212, 201) 50%, rgb(155, 212, 201) 100%);
 }
 
 @keyframes animBtnC {
