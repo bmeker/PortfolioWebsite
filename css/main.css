@@ -13,12 +13,20 @@ body {
 } */
 
 #bg_image{
-    overflow: hidden;
-    position: absolute;
-    -webkit-mask-image: url(images/shirtMask.png);
-    mask-image: url(images/shirtMask.png);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;   
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 1;
+}
+
+#bg_mask{
+    z-index: 2;
+    /* overflow: hidden; 
+    position: absolute; 
+    -webkit-mask-image: url(../images/shirtMask.png); 
+    mask-image: url(../images/shirtMask.png);
+    -webkit-mask-repeat: no-repeat; 
+    mask-repeat: no-repeat;   */
+    filter: hue-rotate(120deg) saturate(1);
 }
 
 button{
@@ -31,6 +39,7 @@ button{
     font-size: 4.8vh;
     overflow: hidden;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 3;
 }
 
 .btn#btnA,.btn#btnK,.btn#btnR,.btn#btnP,.btn#btnG,.btn#btnC {
