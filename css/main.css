@@ -1,0 +1,141 @@
+*{ padding: 0%; margin: 0%;}
+
+body { 
+    height: 100rem;
+    width: 100rem;
+    background: radial-gradient(circle at center center, rgba(31,31,31,1) 0%, rgba(22,22,22,1) 50%, rgba(0,0,0,1) 100%);
+    overflow: hidden; 
+    z-index: 0;
+}
+
+.imgCon{
+    overflow: hidden;
+    position: absolute;
+}
+
+button{
+    background-color: transparent;
+    background-repeat:no-repeat;
+    text-decoration: none;
+    position: absolute;
+    text-align: center;
+    border: none;
+    font-size: 4.8vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    /* Position of the Buttons */
+
+.btn#btnA,.btn#btnK,.btn#btnR,.btn#btnP,.btn#btnG,.btn#btnC {
+    transition: background-position .3s;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+}
+
+.btn#btnA,.btn#btnK,.btn#btnR { background-position: 100% 0%; }
+
+/* :root {
+    --btn-translate-x: 0px;
+    --btn-translate-y: 0px;
+    --btn-rotate: 0deg;
+}
+
+#btn_anim {
+    animation: animBtn 7s alternate infinite ease-in-out;
+}
+
+@keyframes animBtn {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+} */
+
+#btnA {
+    top: 20vh; left: 40vh;
+    animation: animBtnA 7s alternate infinite ease-in-out;
+    background: linear-gradient(90deg, lightskyblue 0%, lightskyblue 50%, white 50%, white 100%);
+}
+
+/* Button Animation */
+@keyframes animBtnA {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+}
+
+#btnK {
+    bottom: 40vh; left: 20vh;
+    /* animation: animBtnK 7s alternate infinite ease-in-out; */
+    background: linear-gradient(90deg, sienna 0%, sienna 50%, white 50%, white 100%);
+}
+
+/* @keyframes animBtnK {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(-4px) translateY(1px) rotate(-2deg); }
+    50%{ transform: translateX(5px) translateY(-2px) rotate(2deg); }
+    75%{ transform: translateX(-3px) translateY(5px) rotate(-1.5deg); }
+    100%{ transform: translateX(2px) translateY(-4px) rotate(1deg); }
+} */
+
+#btnR { 
+    bottom: 10vh; left: 30vh;
+    animation: animBtnR 7s alternate infinite ease-in-out;
+    background: linear-gradient(90deg, cyan 0%, cyan 50%, white 50%, white 100%);
+}
+
+@keyframes animBtnR {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+}
+
+#btnP {
+    top: 25vh; right: 37vh;
+    animation: animBtnP 7s alternate infinite ease-in-out;
+    background: linear-gradient(90deg, white 0%, white 50%, indianred 50%, indianred 100%);
+}
+
+@keyframes animBtnP {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+}
+
+#btnG { 
+    top: 55vh; right: 21vh;
+    animation: animBtnG 7s alternate infinite ease-in-out;
+    background: linear-gradient(90deg, white 0%, white 50%, khaki 50%, khaki 100%);
+}
+
+@keyframes animBtnG {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+}
+
+#btnC { 
+    bottom: 10vh; right: 31vh;
+    animation: animBtnC 7s alternate infinite ease-in-out; 
+    background: linear-gradient(90deg, white 0%, white 50%, chartreuse 50%, chartreuse 100%);
+}
+
+@keyframes animBtnC {
+    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
+    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
+    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
+    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
+    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
+}

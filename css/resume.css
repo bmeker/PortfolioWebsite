@@ -1,0 +1,47 @@
+*{ padding: 0%; margin: 0%;}
+
+body { 
+    background-image: url(../images/Background.png); 
+    overflow: hidden; 
+    z-index: 0;
+}
+
+.flex-container {
+    display: flex;
+    height:  100vh;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+#pdfContainer {
+    margin: 10px;
+    height: 825px;
+    width: 600px;
+}
+
+.pdf {
+    border: 0;
+    overflow: hidden;
+    height: inherit;
+    width: inherit;
+}
+
+#btnReturn {
+    position: absolute;
+    top: 2%;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 40px;
+}
+
+#btnReturn:hover{
+    color: cyan;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
