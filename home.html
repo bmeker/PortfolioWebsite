@@ -4,14 +4,15 @@
     </header>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="css/main.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css"/>    <!-- Main / Background Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/buttonStyle.css"/> <!-- Button / Animation Style Sheet -->
         <script src="js/main.js"></script>
     </head>
 
     <body>
         <!-- Code in JS -->
         <div id="bg_grad"></div>
-        <div>
+        <div id="bg">
             <img id="bg_image" src="images/meA.png" >
             <img id="bg_shirt" src="images/shirt.png">
         </div>
@@ -19,12 +20,14 @@
         <div id="btn_anim"></div>
 
         <!-- All the Buttons -->
-        <button id="btnA" class="btn" type="button"><a>ÜBER MICH</a></button>
-        <button id="btnK" class="btn" type="button"><a>KENTNISSE</a></button>
-        <button id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
-        <button id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
-        <button id="btnG" class="btn" type="button"><a>GITHUB</a></button>
-        <button id="btnC" class="btn" type="button"><a>KONTAKT</a></button> 
+        <div class="all_btns">
+            <button id="btnA" class="btn" type="button"><a>ÜBER MICH</a></button>
+            <button id="btnK" class="btn" type="button"><a>KENTNISSE</a></button>
+            <button id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
+            <button id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
+            <button id="btnG" class="btn" type="button"><a>GITHUB</a></button>
+            <button id="btnC" class="btn" type="button"><a>KONTAKT</a></button> 
+        </div>
 
     </script>
 
