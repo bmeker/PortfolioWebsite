@@ -7,6 +7,6 @@ body { /* Background Code */
 
 #bg { pointer-events: none; }
 #bg_image{ position: absolute; overflow: hidden; z-index: -1; }
-:root{ --hue-deg: 0deg; } /* Only Usedd for Color Change of Shirt */
 
+:root{ --hue-deg: 0deg; } /* Only Usedd for Color Change of Shirt */
 #bg_shirt{ z-index: 2; filter: hue-rotate(var(--hue-deg)); } 
