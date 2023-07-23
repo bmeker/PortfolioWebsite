@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
   var colorDegree = ["290deg","230deg","180deg","140deg","80deg","0deg"];
   const btnLeft = btnIds.slice(0, 3); // Used in Comment "Font Gradient Transition"
 
-
   for (var i = 0; i < btnIds.length; i++) {
     (function(i){
 
@@ -23,10 +22,49 @@ document.addEventListener("DOMContentLoaded", function() {
       });
 
       btn.addEventListener("mouseout", function(){ // Mouse Out Hover
-        btn.style.backgroundPosition = btnLeft.includes(btn.id) ? "0% 0%" : "100% 0%" // Font Gradient Transition
+        btn.style.backgroundPosition = btnLeft.includes(btn.id) ? "0% 0%" : "100% 0%"; // Font Gradient Transition
       });
 
     })(i);
   }
+
+  // Start  | Button Movement Animation
+  let originalPositions = {}
+  originalPositions = {
+    "#btnA": $("#btnA").position(),
+    "#btnK": $("#btnK").position(),
+    "#btnR": $("#btnR").position(),
+    "#btnP": $("#btnP").position(),
+    "#btnG": $("#btnG").position(),
+    "#btnC": $("#btnC").position(),
+  }
+  animateDiv("#btnA");
+  animateDiv("#btnK");
+  animateDiv("#btnR");
+  animateDiv("#btnP");
+  animateDiv("#btnG");
+  animateDiv("#btnC");
+
+  function makeNewPosition(){
+
+    var h = 10 - 1;
+    var w = 10 - 1;
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+  } 
+
+  function animateDiv(myclass){
+      var newq = makeNewPosition();
+      console.log(newq)
+      const newX = originalPositions[myclass].top - newq[0];
+      const newY = originalPositions[myclass].left - newq[1];
+      $(myclass).animate({ top: `${newX}`, left: `${newY}` }, 1000,   function(){
+        animateDiv(myclass);        
+      });
+  };
+  // End | Button Movement Animation
+
 });
 

@@ -4,17 +4,7 @@ button{
     font-size: 4.8vh;
     font-family: Arial, Helvetica, sans-serif;
     z-index: 3;
-
-    /* Testing Start */
-    /* top: attr(data-t);
-    left: attr(data-l); */
-    /* Testing End */
 }
-
-/* div.a, div.k, div.r, div.p, div.g, div.c{
-    width: 50px;
-    height: 50px;
-    border: solid red; */
 
 .btn#btnA,.btn#btnK,.btn#btnR,.btn#btnP,.btn#btnG,.btn#btnC{
     transition: background-position .3s;
@@ -24,45 +14,10 @@ button{
     background-size: 200% 100%;
 }
 
-/* button#btnA,button#btnK,button#btnR,button#btnP,button#btnG,button#btnC{
-    transition: background-position .3s;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-size: 200% 100%;
-} */
-
 .btn#btnA,.btn#btnK,.btn#btnR { background-position: 100% 0%; }
 
-/* button#btnA,button#btnK,button#btnR { background-position: 100% 0%; } */
-/* 
-.aBtn,.kBtn,.rBtn,.pBtn,.gBtn,.cBtn{
-    width: 300px; height: 50px; 
-    position: fixed;
-} */
-
-.btn{
-    animation: animBtnA 7s alternate infinite ease-in-out, animBtnK 7s alternate infinite ease-in-out,
-    animBtnR 7s alternate infinite ease-in-out, animBtnP 7s alternate infinite ease-in-out,
-    animBtnG 7s alternate infinite ease-in-out, animBtnC 7s alternate infinite ease-in-out;
-}
-
-#btnA {
-    /* top: 20vh; left: 40vh; */
-    background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%);
-}
-
-/* Button Animation */
-
-@keyframes animBtnA {
-    0%{ transform: translateX(1px) translateY(1px) rotate(1.5deg); }
-    25%{ transform: translateX(3px) translateY(-3px) rotate(-2deg); }
-    50%{ transform: translateX(-3px) translateY(3px) rotate(2deg); }
-    75%{ transform: translateX(-6px) translateY(3px) rotate(-1.5deg); }
-    100%{ transform: translateX(3px) translateY(-6px) rotate(1deg); }
-}
-
 /* Gradients of the Buttons */
+#btnA { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
 #btnK { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
 #btnR { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
 #btnP { background: linear-gradient(90deg, white 0%, white 50%, rgb(219, 206, 160) 50%, rgb(219, 206, 160) 100%); }
