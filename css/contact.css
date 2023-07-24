@@ -1,0 +1,70 @@
+/* Style inputs with type="text", select elements and textareas */
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #d6d6d6; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: transparent;
+    color: white;
+    padding: 10px 20px;
+    border: solid white;
+    border-width: 1px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+
+  input[type=button]{
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: solid white;
+    border-width: 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0px 10px 0px 10px;
+  }
+
+  input[type=button]:hover{
+    border-color: red;
+    color: red;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    color: green;
+    border-color: green;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: auto;
+    max-width: 80vh;
+    border-radius: 5px;
+    background-color: rgba( 0, 0, 0,20%);
+    margin: auto;
+    
+  }
+
+  label {
+    color: White;
+  }

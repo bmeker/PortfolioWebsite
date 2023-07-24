@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/contact.css"/>
+    <script src="js/contact.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
+
+<body>
+    
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+          <label for="email">E-Mail</label>
+          <input type="text" id="email" name="email" placeholder="Your E-Mail...">
+      
+          <label for="subject">Betreff</label>
+          <textarea id="subject" name="subject" placeholder="Schreib etwas..." style="height:200px"></textarea>
+          
+          <input type="button" value="← ZURÜCK" onclick="location.href='index.html';">
+          <input type="submit" value="Submit">
+
+      
+        </form>
+      </div>
+
+</body>
+
+</html>
