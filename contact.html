@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"/> -->
     <link rel="stylesheet" type="text/css" href="css/contact.css"/>
     <script src="js/contact.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
 <body>
-    
+  <div class="center">
     <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
-          <label for="email">E-Mail</label>
-          <input type="text" id="email" name="email" placeholder="Your E-Mail...">
-      
-          <label for="subject">Betreff</label>
-          <textarea id="subject" name="subject" placeholder="Schreib etwas..." style="height:200px"></textarea>
-          
-          <input type="button" value="← ZURÜCK" onclick="location.href='index.html';">
-          <input type="submit" value="Submit">
+        <form>
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
 
-      
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="Ihre E-Mail..">
+
+          <label for="subject">Thema</label>
+          <select id="subject" name="subject">
+            <option value="" disabled selected hidden>Thema Auswahl ..</option>
+            <option value="jobOffer">Job Angebot</option>
+            <option value="conversation">Einladung zu einem Gespräch</option>
+            <option value="other">Nicht aufgelistet</option>
+          </select>
+    
+          <label for="refrence">Betreff</label>
+          <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
+
+          <div class="button-container">
+            <input type="button" id="back" value="← ZURÜCK" onclick="location.href='index.html';">
+            <input type="submit" id="submit" name="submit" value="Senden">
+          </div>
+
         </form>
       </div>
-
+    </div>
 </body>
 
 </html>
