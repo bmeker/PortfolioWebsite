@@ -4,10 +4,16 @@
     </header>
 
     <head>
+        <link rel="stylesheet" type="text/css" href="css/keyframes.css"/> <!-- Keyframes -->
+
         <link rel="stylesheet" type="text/css" href="css/main.css"/>    <!-- Main / Background Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/buttonStyle.css"/> <!-- Button / Animation Style Sheet -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery -->
+        <link rel="stylesheet" type="text/css" href="css/buttonStyle.css"/> <!-- Button / Animation Stylesheet -->
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuerry -->
         <script src="js/main.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/contact.css"/> <!-- Contact Form Stylesheet -->
+        <script src="js/contact.js"></script> <!-- Contact Form Script-->
     </head>
 
     <body>
@@ -25,11 +31,31 @@
             <button data-pos="[78,30]" data-r="0deg" id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
             <button data-pos="[25,135]" data-r="0deg" id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
             <button data-pos="[55,160]" data-r="0deg" id="btnG" class="btn" type="button"><a href="https://github.com/ChaoticPower" target="_blank">GITHUB</a></button>
-            <button data-pos="[80,140]" data-r="0deg" id="btnC" class="btn" type="button"><a href="contact.html">KONTAKT</a></button>
+            <button data-pos="[80,140]" data-r="0deg" id="btnC" class="btn" type="button" onclick="openContactAnim();"><a>KONTAKT</a></button>
         </div>
 
-    </script>
-
+        <div class="center">
+            <div id="contact_container" class="container">
+                <form onsubmit="sendEmail(); restart(); return false">
+                  <label for="fname">Name</label>
+                  <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
+        
+                  <label for="email">E-Mail</label>
+                  <input type="email" id="email" name="email" placeholder="Ihre E-Mail..">
+        
+                  <label for="subject">Thema</label>
+                  <input type="text" id="subject" name="subject" placeholder="Betreff..">
+            
+                  <label for="refrence">Betreff</label>
+                  <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
+        
+                  <div class="button-container-two">
+                    <input type="button" id="back" value="Close" onclick="closeContactAnim()">
+                    <input type="submit" id="submit" name="submit" value="Senden">
+                  </div>
+                </form>
+              </div>
+            </div>
     </body>
 
 </html>

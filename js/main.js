@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function animateDiv(myclass){
       var newq = makeNewPosition();
-      console.log(newq)
       const newX = originalPositions[myclass].top - newq[0];
       const newY = originalPositions[myclass].left - newq[1];
       $(myclass).animate({ top: `${newX}`, left: `${newY}` }, 1000,   function(){
@@ -65,6 +64,12 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   };
   // End | Button Movement Animation
-
 });
 
+
+function openContactAnim() { // Opening Contact Form 
+  document.getElementById('contact_container').style.animation = 'openContactForm 2s forwards'; // 2s = duration
+}
+function closeContactAnim(){ // Closing Contact Form
+  document.getElementById('contact_container').style.animation = 'closeContactForm 2s forwards'; // 2s = duration
+}

@@ -12,6 +12,7 @@ button{
     background-clip: text;
     -webkit-background-clip: text;
     background-size: 200% 100%;
+    position: absolute;
 }
 
 .btn#btnA,.btn#btnK,.btn#btnR { background-position: 100% 0%; }

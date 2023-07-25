@@ -1,0 +1,10 @@
+
+@keyframes openContactForm { /* Keyframes for opening Contact From */
+    from {top: 100%;}
+    to {top: 20%;}
+  }
+
+  @keyframes closeContactForm { /* Keyframes for closing Contact From */
+    from {top: 20%;}
+    to {top: 100%;}
+  }

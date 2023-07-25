@@ -1,7 +1,9 @@
 *{ padding: 0%; margin: 0%;}
 
 body { /* Background Code */
-    height: 100rem; width: 100rem; overflow: hidden; 
+    height: 100vh; 
+    width: 100vw; 
+    overflow: hidden; 
     background: radial-gradient(circle at center center, rgba(31,31,31,255) 0%, rgba(28,28,28,255) 30%, rgba(20,20,20,255) 38%, rgba(16,16,16,255) 45%, rgba(5,5,5,255) 100%);
     background-repeat: none;
 }
