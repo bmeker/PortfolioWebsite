@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function openContactAnim() { // Opening Contact Form
-  document.getElementById('center').style.animation = 'enableBackdropBlur 2s forwards';
-  document.getElementById('contact_container').style.animation = 'openContactForm 2s forwards'; // 2s = duration
+  document.getElementById('center').style.animation = 'enableBackdropBlur 1s forwards';
+  document.getElementById('contact_container').style.animation = 'openContactForm 1s forwards'; // 2s = duration
 }
 function closeContactAnim(){ // Closing Contact Form
-  document.getElementById('center').style.animation = 'disableBackdropBlur 2s forwards';
-  document.getElementById('contact_container').style.animation = 'closeContactForm 2s forwards'; // 2s = duration
+  document.getElementById('center').style.animation = 'disableBackdropBlur 1s forwards';
+  document.getElementById('contact_container').style.animation = 'closeContactForm 1s forwards'; // 2s = duration
 }
