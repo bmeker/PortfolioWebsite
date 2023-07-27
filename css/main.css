@@ -14,4 +14,4 @@ img { max-width: 100%; height: auto; width: auto\9; bottom: 0px; }
 #bg_image{ position: absolute; overflow: hidden; z-index: -1; }
 
 :root{ --hue-deg: 0deg; } /* Only Used for Color Change of Shirt */
-#bg_shirt{ position: absolute; z-index: 2; filter: hue-rotate(var(--hue-deg));} 
+#bg_shirt{ position: absolute; z-index: 2; filter: hue-rotate(var(--hue-deg));}
