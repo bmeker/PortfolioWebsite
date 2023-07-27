@@ -1,6 +1,6 @@
 function sendEmail(){
     Email.send({
-        SecureToken : "cac3bb45-ec2b-44d5-afd8-63cd83d519c4",
+        SecureToken : "d5839b7a-62bd-465e-8339-a70099b79cc4",
         To : 'Bahadir47Eker@gmail.com',
         From : 'portfolio.contact.me.mail@gmail.com',
         Subject : document.getElementById("subject").value,
@@ -42,19 +42,4 @@ document.addEventListener("DOMContentLoaded", function() {
         id.style.borderColor = clr;
         container.style.borderColor = clr;
     };
-
-
-    // close.addEventListener('mouseover',function(){
-    //     close.style.color = 'red';
-    //     close.style.borderColor = 'red';
-    //     container.style.borderColor = 'red';
-    // });
-
-    // submit.addEventListener('mouseover',function(){
-    //     close.style.color = 'green';
-    //     close.style.borderColor = 'green';
-    //     container.style.borderColor = 'green';
-    // });
-
-
 });
