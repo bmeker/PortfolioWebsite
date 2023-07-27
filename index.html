@@ -17,24 +17,26 @@
     </head>
 
     <body>
-        <div id="bg_grad"></div> <!-- Background Gradient Code in CSS -->
-        <div id="bg"> <!-- Image Holder -->
-            <img id="bg_image" src="images/meA.png" >
-            <img id="bg_shirt" src="images/shirt.png">
+        <div id="homepage">
+            <div id="bg_grad"></div> <!-- Background Gradient Code in CSS -->
+            <div id="bg"> <!-- Image Holder -->
+                <img id="bg_image" src="images/meA.png" >
+                <img id="bg_shirt" src="images/shirt.png">
+            </div>
+
+            <div id="btn_anim"></div>
+
+            <div> <!-- All the Buttons -->
+                <button data-pos="[20,40]" data-r="0deg" id="btnA" class="btn" type="button"><a>ÜBER MICH</a></button>
+                <button data-pos="[50,20]" data-r="0deg" id="btnK" class="btn" type="button"><a>KENNTNISSE</a></button>
+                <button data-pos="[78,30]" data-r="0deg" id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
+                <button data-pos="[25,135]" data-r="0deg" id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
+                <button data-pos="[55,160]" data-r="0deg" id="btnG" class="btn" type="button"><a href="https://github.com/ChaoticPower" target="_blank">GITHUB</a></button>
+                <button data-pos="[80,140]" data-r="0deg" id="btnC" class="btn" type="button" onclick="openContactAnim();"><a>KONTAKT</a></button>
+            </div>
         </div>
 
-        <div id="btn_anim"></div>
-
-        <div> <!-- All the Buttons -->
-            <button data-pos="[20,40]" data-r="0deg" id="btnA" class="btn" type="button"><a>ÜBER MICH</a></button>
-            <button data-pos="[50,20]" data-r="0deg" id="btnK" class="btn" type="button"><a>KENNTNISSE</a></button>
-            <button data-pos="[78,30]" data-r="0deg" id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
-            <button data-pos="[25,135]" data-r="0deg" id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
-            <button data-pos="[55,160]" data-r="0deg" id="btnG" class="btn" type="button"><a href="https://github.com/ChaoticPower" target="_blank">GITHUB</a></button>
-            <button data-pos="[80,140]" data-r="0deg" id="btnC" class="btn" type="button" onclick="openContactAnim();"><a>KONTAKT</a></button>
-        </div>
-
-        <div class="center">
+        <div class="center" id="center">
             <div id="contact_container" class="container">
                 <form onsubmit="sendEmail(); restart(); return false">
                   <label for="fname">Name</label>
@@ -49,8 +51,8 @@
                   <label for="refrence">Betreff</label>
                   <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
         
-                  <div class="button-container-two">
-                    <input type="button" id="back" value="Close" onclick="closeContactAnim()">
+                  <div class="button-container-two" id="button-container-two">
+                    <input type="button" id="close" value="Close" onclick="closeContactAnim()">
                     <input type="submit" id="submit" name="submit" value="Senden">
                   </div>
                 </form>
