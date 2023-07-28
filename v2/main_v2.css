@@ -1,0 +1,62 @@
+* {
+    padding: 0%; margin: 0%;
+}
+
+body {
+    height: 100vh; 
+    width: 100vw; 
+    overflow: hidden; 
+    background: radial-gradient(circle at center center, rgba(31,31,31,255) 0%, rgba(28,28,28,255) 30%, rgba(20,20,20,255) 38%, rgba(16,16,16,255) 45%, rgba(5,5,5,255) 100%);
+    background-repeat: none;
+    z-index: 0;
+}
+
+#bg {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0%; right: 0%;
+    overflow: hidden;
+}
+
+img { max-width: 100%; height: auto; width: auto\9; bottom: 0px; }
+
+#bg_image { position: absolute; z-index: 1; }
+
+#bg_shirt { position: relative; z-index: 2;
+    /* filter: hue-rotate(0deg); */
+}
+
+.nav_con{
+    position: relative;
+}
+
+nav{
+    transform: translateY(130%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.navbar {
+    color: white;
+    font-size: 34px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navigation#about_me,.navigation#knowdlge,.navigation#resume,.navigation#project,.navigation#github,.navigation#contact{
+    transition: background-position .3s;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    position: absolute;
+}
+
+#about_me { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
+#knowledge { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
+#resume { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
+#project { background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); }
+#github { background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); }
+#contact { background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); }
