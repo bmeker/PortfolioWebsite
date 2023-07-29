@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/main_v2.css"/>
-    <script type="module" src="js/main_v2.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- smtpJs -->
+    <link rel="stylesheet" type="text/css" href="css/main_v2.css"/> <!-- Styling -->
+    <script type="module" src="js/main_v2.js"></script> <!-- Main JavaScript-->
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <button id="resume" class="btn" type="button" data-clicked=""><a id="resume_text">LEBENSLAUF</a></button>
             <button id="project" class="btn" type="button" data-clicked=""><a id="project_text">PROJEKTE</a></button>
             <button id="github" class="btn" type="button" data-clicked=""><a id="github_text">GITHUB</a></button>
-            <button id="contact" class="btn" type="button" data-clicked=""><a id="contact_text">KONTAKT</a></button>
+            <button id="contact" class="btn" type="button" data-clicked="" onclick="openContact();"><a id="contact_text">KONTAKT</a></button>
         </div>
 
         <div class="middle_content">
@@ -26,8 +27,8 @@
                 <!-- Content Here -->
 
                 <!-- Contact Form -->
-                <div class="contact_container">
-                    <form onsubmit="sendEmail(); restart(); return false">
+                <div class="contact_container" id="contact_container">
+                    <form>
                         <label for="fname">Name</label>
                         <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
                 
@@ -41,7 +42,8 @@
                         <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
                 
                         <div class="button-container-two" id="button-container-two">
-                            <input type="button" class="close" id="close" value="Close" onclick="closeContactAnim()">
+                            <!-- <input type="button" class="close" id="close" value="Close" onclick="closeContactAnim()"> -->
+                            <input type="button" class="close" id="close" value="Close" onclick="openContact()">
                             <input type="submit" class="submit" id="submit" name="submit" value="Senden">
                         </div>
                     </form>

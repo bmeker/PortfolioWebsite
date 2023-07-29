@@ -1,3 +1,16 @@
+function sendEmail(){
+  Email.send({
+    SecureToken : "d5839b7a-62bd-465e-8339-a70099b79cc4",
+    To : 'Bahadir47Eker@gmail.com',
+    From : 'portfolio.contact.me.mail@gmail.com',
+    Subject : document.getElementById("subject").value,
+    Body : "Name : " + document.getElementById("fname").value
+      + "<br> Email : " + document.getElementById("email").value
+      + "<br> Betreff : " + document.getElementById("reference").value
+  }).then(
+  );
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     var btnIds = ["contact","github","project","resume","knowledge","about_me"];
@@ -40,6 +53,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
       })(i);
     }
+    // Contact Form Submit Button Listener
+    document.querySelector("form").addEventListener('submit', function(event){
+      sendEmail();
+      restart();
+      return false;
+    });
+
   });
 
   function btnHoverTransition(txt, btn, mleft){
@@ -47,6 +67,15 @@ document.addEventListener("DOMContentLoaded", function() {
     txt.style.transition = '0.5s';
     btn.style.transition = '0.5s';
   }
+
+  function openContact() {
+    document.getElementById('contact_container').style.animation = 'openContactForm 1s forwards';
+  }
+
+  function closeContact() {
+    document.getElementById('contact_container').style.animation = 'closeContactForm 1s forwards';
+  }
+
 
   // function openContactAnim() { // Opening Contact Form
   //   document.getElementById('center').style.animation = 'enableBackdropBlur 1s forwards';
