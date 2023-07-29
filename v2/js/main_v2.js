@@ -4,19 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     var txtIds = ["contact_text","github_text","project_text","resume_text","knowledge_text","about_me_text"];
     var colorDegree = ["290deg","230deg","180deg","140deg","80deg","0deg"];
 
-    // let isClicked = false;
-
     for (var i = 0; i < btnIds.length; i++) {
       (function(i){
   
         var colorDeg = colorDegree[i];
         var btn = document.getElementById(btnIds[i]);
         var txt = document.getElementById(txtIds[i]);
-  
-        // var _btn = null; // old Button Id Holder
-        // var _txt = null; // old txt Id Holder
 
-        btn.dataset.clicked = 'false';
+        btn.dataset.clicked = 'false'; // set data-clicked default to false
 
         btn.addEventListener("mouseover", function(){ // Mouse Hover
           document.documentElement.style.setProperty("--hue-deg", colorDeg);
@@ -31,40 +26,21 @@ document.addEventListener("DOMContentLoaded", function() {
           }
 
         btn.addEventListener('click', function(){ // Mouse Click
-          
-          btnIds.forEach(function(btnId, i) {
+          btnIds.forEach(function(btnId, i) { // if other Button is Clicked true make other Buttons False
             var _btn = document.getElementById(btnId);
-            var _txt = document.getElementById(txtIds[i]);
+            document.getElementById(txtIds[i]).style.backgroundPosition = '100% 0%';
             _btn.style.marginLeft = '0px';
-            _txt.style.backgroundPosition = "100% 0%";
             _btn.dataset.clicked = false;
           });
-
           btn.dataset.clicked = 'true';
-
           txt.style.backgroundPosition = "0% 0%";
           btnHoverTransition(txt,btn,30);
-
-
-          // for(var a = 0; a < btnIds.length; a++){
-          //   var modBtn = otherBtnClickedFalse(btnIds,i);
-          //   // console.log(modBtn[a]);
-          //   // btnIds[modBtn[a]].dataset.clicked = false;
-          // }
-
-        })
-
+          })
         });
-  
+
       })(i);
     }
-
   });
-
-  // function otherBtnClickedFalse(btnIds,i){
-  //   var test = btnIds.filter((value) => value !== i);
-  //   console.log(test);
-  // }
 
   function btnHoverTransition(txt, btn, mleft){
     btn.style.marginLeft = mleft + 'px';

@@ -4,13 +4,18 @@ body {
     height: 100vh; 
     width: 100vw; 
     overflow: hidden; 
-    /* background: radial-gradient(circle at center center, rgba(31,31,31,255) 0%, rgba(28,28,28,255) 30%, rgba(20,20,20,255) 38%, rgba(16,16,16,255) 45%, rgba(5,5,5,255) 100%); */
     background-image: url( '../rsrc/background.svg' );
     background-repeat: none;
     background-size: 100%;
     z-index: 0;
 }
 
+/* Root CSS */
+:root { 
+    --hue-deg: 0deg; /* Shirt Color Hue */
+}
+
+/* Image CSS */
 .bg {
     position: absolute;
     overflow: hidden;
@@ -18,19 +23,14 @@ body {
     width: 100vw;
     display: flex;
     justify-content: flex-end;
+
+    & img { pointer-events: none; transition: 0.5s}
+    #bg_image { position: absolute; z-index: 1; }
+    #bg_shirt { position: absolute; z-index: 2; filter: hue-rotate(var(--hue-deg)); }
 }
 
-img { pointer-events: none; transition: 0.5s}
-
-#bg_image { position: absolute; z-index: 1; }
-
-:root { --hue-deg: 0deg; }
-
-#bg_shirt { position: absolute; z-index: 2; filter: hue-rotate(var(--hue-deg)); }
-
-button { position: relative; }
-
-.btn_con{
+/* Button CSS */
+.btn_con{ /* Button Container */
     position: absolute;
     overflow: hidden;
     height: 100vh;
@@ -40,35 +40,37 @@ button { position: relative; }
     justify-content: center;
     margin-left: 0px;
     border-top: 50px;
+
+    .btn{ /* Button Styling*/
+        padding: 10px 0px 0px 20px;
+        width: 300px;
+        font-size: 40px;
+        color: white;
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: none;
+
+        /* BUtton Color Change Transition */
+        & a#about_me_text, a#knowledge_text, a#resume_text, a#project_text, a#github_text, a#contact_text{ 
+            transition: background-position .3s;
+            background-position: 100% 0%;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-size: 200% 100%;
+            position: relative;
+        }
+        /* Button Gradient */
+        #about_me_text { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
+        #knowledge_text { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
+        #resume_text { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
+        #project_text { background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); }
+        #github_text { background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); }
+        #contact_text { background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); } 
+    }
 }
 
-.btn{
-    padding: 10px 0px 0px 20px;
-    width: 300px;
-    font-size: 40px;
-    color: white;
-    text-align: left;
-    background-color: rgba(0, 0, 0, 0.2);
-    border: none;
-}
-
-.btn a#about_me_text,.btn a#knowledge_text,.btn a#resume_text,.btn a#project_text,.btn a#github_text,.btn a#contact_text{
-    transition: background-position .3s;
-    background-position: 100% 0%;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-size: 200% 100%;
-    position: relative;
-}
-
-#about_me_text { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
-#knowledge_text { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
-#resume_text { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
-#project_text { background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); }
-#github_text { background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); }
-#contact_text { background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); } 
-
+/* Middle Content CSS */
 .middle_content{
     overflow: hidden;
     width: 100vw;
@@ -76,12 +78,69 @@ button { position: relative; }
     justify-content: center;
     align-items: center;
     display: flex;
+
+    .content { /* Content Zone */
+        height: 85vh;
+        width: 50vw;
+        background-color: rgba(0, 0, 0, 0.4);
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-.content {
-    height: 85vh;
-    width: 50vw;
-    background-color: rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    align-items: center;
+/* Contact Form CSS */
+.contact_container {
+    position: relative;
+    margin: 70px;
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+
+    & label 
+    {
+        color: white;
+        display: block;
+        margin: 10px 0px 5px 0px;
+    }
+
+    /* Textboxes */
+    #fname, #subject, #email, #reference
+    {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+
+        &#reference{ /* Reference Styling */
+            height: 335px;
+            width: 100%;
+            box-sizing: border-box;
+            resize: none;
+          }
+      }
+
+    .button-container-two
+    {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+
+        #submit, #close
+        {
+            border: solid white 1px;
+            border-radius: 20px;
+            padding: 5px 10px 5px 10px; 
+            background-color: transparent;
+            color: white;
+    
+            &:hover.submit{
+                color: green;
+                border-color: green;
+                }
+        
+            &:hover.close{
+                color: red;
+                border-color: red;
+                }
+        }
+    }
 }
