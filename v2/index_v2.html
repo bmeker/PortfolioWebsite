@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- smtpJs -->
     <link rel="stylesheet" type="text/css" href="css/main_v2.css"/> <!-- Styling -->
     <script type="module" src="js/main_v2.js"></script> <!-- Main JavaScript-->
@@ -19,14 +20,14 @@
             <button id="resume" class="btn" type="button" data-clicked=""><a id="resume_text">LEBENSLAUF</a></button>
             <button id="project" class="btn" type="button" data-clicked=""><a id="project_text">PROJEKTE</a></button>
             <button id="github" class="btn" type="button" data-clicked=""><a id="github_text">GITHUB</a></button>
-            <button id="contact" class="btn" type="button" data-clicked="" onclick="openContact();"><a id="contact_text">KONTAKT</a></button>
+            <button id="contact" class="btn" type="button" data-clicked=""><a id="contact_text">KONTAKT</a></button>
         </div>
 
         <div class="middle_content">
             <div class="content">
                 <!-- Content Here -->
 
-                <div class="content_aboutme">
+                <div class="content_aboutme" id="content_aboutme">
                     <h1  style=" color: white; font-size: 28px">Hallo, Ich bin..</h1>
                     <h2 id="txtRight" style=" color: lightskyblue; font-size: 50px;">BAHADIR MUHAMMET EKER <span style="color:white; font-size: 24px;">24/yo</span></h2>
                     <h1 style="color: white; font-size: 28px; align-self: flex-end;">Ich bin ein..</h1>
@@ -39,7 +40,7 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="contact_container" id="contact_container">
+                <div class="content_contact" id="content_contact">
                     <form>
                         <label for="fname">Name</label>
                         <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">

@@ -51,6 +51,20 @@ document.addEventListener("DOMContentLoaded", function() {
           })
         });
 
+        btn.addEventListener('click',function(){
+          for(var b = 0; b < btnIds.length; b++){
+            // console.log('btnIds : ' + btnIds[b]);
+            // console.log('btn : ' + btn.id);
+
+            // if(btn.id == btnIds[b]){
+            //   ContentSelector(btn,btnIds);
+            // }
+
+            ContentSelector(btn,btnIds);
+          }
+        });
+
+
       })(i);
     }
     // Contact Form Submit Button Listener
@@ -59,8 +73,49 @@ document.addEventListener("DOMContentLoaded", function() {
       restart();
       return false;
     });
-
   });
+
+  var content = ['content_contact','content_github','content_project','content_resume','content_knowledge','content_aboutme'];
+
+  // Content Selector that Hides or Shows Content
+  function ContentSelector(btn,btnIds){
+    var aboutme = document.getElementById(content[5]);
+    // var knowledge = document.getElementById(content[4]);
+    // var resume = document.getElementById(content[3]);
+    // var project = document.getElementById(content[2]);
+    // var github = document.getElementById(content[1]);
+    var contact = document.getElementById(content[0]);
+
+    hideAllContent(aboutme,contact);
+
+    if(btn.id == 'about_me'){
+      aboutme.style.visibility = 'visible';
+    }
+    // if(btn.id == 'knowledge'){
+    //   knowledge.style.visibility = 'visible';
+    // }
+    // if(btn.id == 'resume'){
+    //   resume.style.visibility = 'visible';
+    // }
+    // if(btn.id == 'project'){
+    //   project.style.visibility = 'visible';
+    // }
+    // if(btn.id == 'github'){
+    //   github.style.visibility = 'visible';
+    // }
+    if(btn.id == 'contact'){
+      contact.style.visibility = 'visible';
+    }
+  }
+
+  function hideAllContent(aboutme,contact){
+    aboutme.style.visibility = 'hidden';
+    // knowledge.style.visibility = 'hidden';
+    // resume.style.visibility = 'hidden';
+    // project.style.visibility = 'hidden';
+    // github.style.visibility = 'hidden';
+    contact.style.visibility = 'hidden';
+  }
 
   function btnHoverTransition(txt, btn, mleft){
     btn.style.marginLeft = mleft + 'px';
@@ -68,13 +123,13 @@ document.addEventListener("DOMContentLoaded", function() {
     btn.style.transition = '0.5s';
   }
 
-  function openContact() {
-    document.getElementById('contact_container').style.animation = 'openContactForm 1s forwards';
-  }
+  // function openContact() {
+  //   document.getElementById('contact_container').style.animation = 'openContactForm 1s forwards';
+  // }
 
-  function closeContact() {
-    document.getElementById('contact_container').style.animation = 'closeContactForm 1s forwards';
-  }
+  // function closeContact() {
+  //   document.getElementById('contact_container').style.animation = 'closeContactForm 1s forwards';
+  // }
 
 
   // function openContactAnim() { // Opening Contact Form
