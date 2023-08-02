@@ -1,64 +1,103 @@
 <!DOCTYPE html>
-    <header>
-        <title> Website Title </title>
-    </header>
 
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/keyframes.css"/> <!-- Keyframes -->
+<head>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- smtpJs -->
+    <script src="js/main.js"></script>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="css/main.css"/>    <!-- Main / Background Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="css/buttonStyle.css"/> <!-- Button / Animation Stylesheet -->
+<body>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuerry -->
-        <script src="js/main.js"></script>
+</body>
+    <div class="content_container">
 
-        <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- smtpJs -->
-        <link rel="stylesheet" type="text/css" href="css/contact.css"/> <!-- Contact Form Stylesheet -->
-        <script src="js/contact.js"></script> <!-- Contact Form Script-->
-    </head>
+        <!-- Images -->
+        <div class="content_image">
+            <!-- <a style="color: black; font-size: 20px;"> 3 </a> -->
 
-    <body>
-        <div id="homepage">
-            <div id="bg_grad"></div> <!-- Background Gradient Code in CSS -->
-            <div id="bg"> <!-- Image Holder -->
-                <img id="bg_image" src="images/meA.png" >
-                <img id="bg_shirt" src="images/shirt.png">
-            </div>
-
-            <div id="btn_anim"></div>
-
-            <div> <!-- All the Buttons -->
-                <button data-pos="[20,40]" data-r="0deg" id="btnA" class="btn" type="button"><a>ÜBER MICH</a></button>
-                <button data-pos="[50,20]" data-r="0deg" id="btnK" class="btn" type="button"><a>KENNTNISSE</a></button>
-                <button data-pos="[78,30]" data-r="0deg" id="btnR" class="btn" type="button"><a href="resume.html">LEBENSLAUF</a></button>
-                <button data-pos="[25,135]" data-r="0deg" id="btnP" class="btn" type="button"><a>PROJEKTE</a></button>
-                <button data-pos="[55,160]" data-r="0deg" id="btnG" class="btn" type="button"><a href="https://github.com/ChaoticPower" target="_blank">GITHUB</a></button>
-                <button data-pos="[80,140]" data-r="0deg" id="btnC" class="btn" type="button" onclick="openContactAnim();"><a>KONTAKT</a></button>
-            </div>
+            <img id="image_me" src="./images/Me.png" >
+            <img id="image_shirt" src="./images/shirt.png">
         </div>
+        <!-- Buttons -->
 
-        <div class="center" id="center">
-            <div id="contact_container" class="container">
-                <form onsubmit="sendEmail(); restart(); return false">
-                  <label for="fname">Name</label>
-                  <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
-        
-                  <label for="email">E-Mail</label>
-                  <input type="email" id="email" name="email" placeholder="Ihre E-Mail..">
-        
-                  <label for="subject">Thema</label>
-                  <input type="text" id="subject" name="subject" placeholder="Betreff..">
+        <div class="content_button">
+
+            <!-- <a style="color: black; font-size: 20px;"> 1 </a> -->
+            <button class="btn" id="aboutme" data-clicked="false"><a id="aboutme_text">ÜBER MICH</a></button>
+            <button class="btn" id="knowledge" data-clicked="false"><a id="knowledge_text">KENNTNISSE</a></button>
+            <button class="btn" id="resume" data-clicked="false"><a id="resume_text">LEBENSLAUF</a></button>
+            <button class="btn" id="project" data-clicked="false"><a id="project_text">PROJEKTE</a></button>
+            <button class="btn" id="contact" data-clicked="false"><a id="contact_text">KONTAKT</a></button>
+
+        </div>
+        <!-- Content Box -->
+        <div class="content_box">
+
+            <div class="content_aboutme" id="content_aboutme">
+                <h1  style=" color: white; font-size: 28px">Hallo, Ich bin der..</h1>
+                <h2 id="txtRight" style=" color: lightskyblue; font-size: 50px;">BAHADIR MUHAMMET EKER <span style="color:white; font-size: 24px;">24/yo</span></h2>
+                <h1 style="color: white; font-size: 28px; align-self: flex-end;">Ich bin ein..</h1>
+                <h2 id="txtRight" style="color: indianred; font-size: 45px; align-self: flex-end;">SOFTWAREENTWICKLER</h2>
+                <br>
+                <p style="color: white; font-size: 20px;">Ich habe mit 12 Jahren meine erste Erfahrung mit Programmieren gemacht.
+                    <br> Durch das erste C++ Buch, das ich bekam,
+                    <br> baute ich mir meinen ersten Taschenrechner mit Visual Studio.
+                    <br> In dieser Zeit wusste ich nicht, dass ich mich mehr und mehr dafür begeistern würde.
+                </p>
+            </div>
+
+            <div class="content_contact" id="content_contact">
+                <form>
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
             
-                  <label for="refrence">Betreff</label>
-                  <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
-        
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" name="email" placeholder="Ihre E-Mail..">
+            
+                    <label for="subject">Thema</label>
+                    <input type="text" id="subject" name="subject" placeholder="Betreff..">
+                
+                    <label for="refrence">Betreff</label>
+                    <textarea id="reference" name="reference" placeholder="Ihr Betreff.."></textarea>
+            
                     <div class="button-container-two" id="button-container-two">
-                        <input type="button" id="close" value="Close" onclick="closeContactAnim()">
-                        <input type="submit" id="submit" name="submit" value="Senden">
+                        <input type="submit" class="submit" id="submit" name="submit" value="SENDEN">
                     </div>
                 </form>
             </div>
-        </div>
-    </body>
 
+            <div class="content_project" id="content_project">
+                <!-- PROJECT -->
+            </div>
+
+            <div class="content_resume" id="content_resume">
+                <!-- RESUME -->
+            </div>
+
+            <div class="content_knowledge" id="content_knowledge">
+                <!-- KNOWLEDGE -->
+                <div class="textCentering">
+                    <div class="ratingCircle" id="r7">7</div><a id="_text">C#</a>
+                    <div class="ratingCircle" id="r7">7</div><a id="_text">JavaScript</a>
+                    <div class="ratingCircle" id="r6">6</div><a id="_text">Java</a>
+                    <div class="ratingCircle" id="r5">5</div><a id="_text">Kotlin</a>
+                    <div class="ratingCircle" id="r5">5</div><a id="_text">Lua</a>
+                </div>
+                <div class="textCentering">
+                    <div class="ratingCircle" id="r8">8</div><a id="_text">Visual Studio</a>
+                    <div class="ratingCircle" id="r8">8</div><a id="_text">Adobe Photoshop</a>
+                    <div class="ratingCircle" id="r8">8</div><a id="_text">MS Office</a>
+                    <div class="ratingCircle" id="r7">7</div><a id="_text">IntelliJ</a>
+                </div>
+                <div class="textCentering">
+                    <div class="ratingCircle" id="r10">10</div><a id="_text">Deutsch</a>
+                    <div class="ratingCircle" id="r8">8</div><a id="_text">Englisch</a>
+                    <div class="ratingCircle" id="r7">7</div><a id="_text">Türkisch</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </html>

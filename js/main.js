@@ -1,77 +1,96 @@
-document.addEventListener("DOMContentLoaded", function() {
+function sendEmail(){ // smtpJs
+  Email.send({
+    SecureToken : "d5839b7a-62bd-465e-8339-a70099b79cc4",
+    To : 'Bahadir47Eker@gmail.com',
+    From : 'portfolio.contact.me.mail@gmail.com',
+    Subject : document.getElementById("subject").value,
+    Body : "Name : " + document.getElementById("fname").value
+      + "<br> Email : " + document.getElementById("email").value
+      + "<br> Betreff : " + document.getElementById("reference").value
+  }).then(
+  );
+}
 
-  var btnIds = ["btnC","btnG","btnP","btnR","btnK","btnA"];
-  var colorDegree = ["290deg","230deg","180deg","140deg","80deg","0deg"];
-  const btnLeft = btnIds.slice(0, 3); // Used in Comment "Font Gradient Transition"
+document.addEventListener("DOMContentLoaded", function() { // Execute after HTML is Fully Loaded
 
-  for (var i = 0; i < btnIds.length; i++) {
-    (function(i){
+  var btnIds = ["contact","project","resume","knowledge","aboutme"]; // Ids of Buttons
+  var txtIds = ["contact_text","project_text","resume_text","knowledge_text","aboutme_text"]; // Ids of Button Text
+  var colorDegree = ["290deg","180deg","140deg","80deg","0deg"]; // Value of Hue Deg for every Button
 
-      var colorDeg = colorDegree[i];
-      var btn = document.getElementById(btnIds[i]);
+  var contentIds = { // Button Content Array
+  contact : document.getElementById('content_contact'),
+  project : document.getElementById('content_project'),
+  resume : document.getElementById('content_resume'),
+  knowledge : document.getElementById('content_knowledge'),
+  aboutme : document.getElementById('content_aboutme')};
 
-      btnIds.forEach(element => { // Button Position
-        var pos = JSON.parse(btn.dataset.pos);
-        btn.style.top = pos[0] + "vh";
-        btn.style.left = pos[1] + "vh";
-      });
+  function contentSelector(btn){
+  var contentToShow = contentIds[btn.id];
+    for (var key in contentIds){ // Hide All Content
+      contentIds[key].style.visibility = 'hidden';
+    }
+    if(contentToShow){
+      contentToShow.style.visibility = 'visible';
+    }
+  }
 
-      btn.addEventListener("mouseover", function(){ // Mouse In Hover
-        document.documentElement.style.setProperty("--hue-deg", colorDeg);  // Change Color of Shirt
-        btn.style.backgroundPosition = btnLeft.includes(btn.id) ? "100% 0%" : "0% 0%";  // Font Gradient Transition
-      });
+    for (var i = 0; i < btnIds.length; i++) {
+      (function(i){
+        var colorDeg = colorDegree[i];  // Set Hue Deg to a Var
+        var btn = document.getElementById(btnIds[i]);
+        var txt = document.getElementById(txtIds[i]);
 
-      btn.addEventListener("mouseout", function(){ // Mouse Out Hover
-        btn.style.backgroundPosition = btnLeft.includes(btn.id) ? "0% 0%" : "100% 0%"; // Font Gradient Transition
-      });
+        btn.addEventListener("mouseover", function(){ // Mouse Hover
+          document.documentElement.style.setProperty("--hue-deg", colorDeg); // Change Hue deg for the wanted Button
+          txt.style.backgroundPosition = "0% 0%"; // Change background Position for Text (Color Change Animation)
+          btnHoverTransition(txt,btn,50); // Color Change Transition
+        });
+
+        btn.addEventListener("mouseout", function() // Mouse Out
+        { 
+          if(btn.dataset.clicked == 'false') // Check if a Button was Clicked before
+            {
+              txt.style.backgroundPosition = "100% 0%"; // Change background Position for Text (Color Change Animation)
+              btnHoverTransition(txt,btn,0); // Color Change Transition
+            }
+        })
+
+        btn.addEventListener('click', function() // Mouse Click
+        {
+          btnIds.forEach(function(btnId, index){ // All Buttons Clicked False
+            var _btn = document.getElementById(btnId);
+            var _txt = document.getElementById(txtIds[index]);
+            _txt.style.backgroundPosition = '100% 0%'; // Change background Position for Text (Color Change Animation)
+            _btn.style.marginLeft = '0px'; // Remove Margin
+            _btn.dataset.clicked = 'false'; // Set Button Click to False
+          })
+          btn.dataset.clicked = 'true'; // Set Button Click to true
+          txt.style.backgroundPosition = '0% 0%'; // Change background Position for Text (Color Change Animation)
+          btnHoverTransition(txt,btn,50); // Color Change Transition
+          contentSelector(btn); // Show and Hide different Content
+        })
+
+        if(btn.id == 'aboutme'){ // Have Button 'aboutme' active on first page
+          document.documentElement.style.setProperty("--hue-deg", colorDeg); // Change Hue deg for the wanted Button
+          txt.style.backgroundPosition = '0% 0%' // Change background Position for Text (Color Change Animation)
+          btnHoverTransition(txt,btn,50); // Color Change Transition
+          btn.dataset.clicked = 'true'; // Set button click to True
+          contentSelector(btn);
+        }
 
     })(i);
-  }
+    };
 
-  // Start  | Button Movement Animation
-  let originalPositions = {}
-  originalPositions = {
-    "#btnA": $("#btnA").position(),
-    "#btnK": $("#btnK").position(),
-    "#btnR": $("#btnR").position(),
-    "#btnP": $("#btnP").position(),
-    "#btnG": $("#btnG").position(),
-    "#btnC": $("#btnC").position(),
-  }
-  animateDiv("#btnA");
-  animateDiv("#btnK");
-  animateDiv("#btnR");
-  animateDiv("#btnP");
-  animateDiv("#btnG");
-  animateDiv("#btnC");
+    document.querySelector("form").addEventListener('submit', function(event){ // Button to Send Email 
+      sendEmail();
+      restart();
+      return false;
+    });
 
-  function makeNewPosition(){
-
-    var h = 10 - 1;
-    var w = 10 - 1;
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-    
-    return [nh,nw];    
-  } 
-
-  function animateDiv(myclass){
-      var newq = makeNewPosition();
-      const newX = originalPositions[myclass].top - newq[0];
-      const newY = originalPositions[myclass].left - newq[1];
-      $(myclass).animate({ top: `${newX}`, left: `${newY}` }, 1000,   function(){
-        animateDiv(myclass);        
-      });
-  };
-  // End | Button Movement Animation
 });
 
-
-function openContactAnim() { // Opening Contact Form
-  document.getElementById('center').style.animation = 'enableBackdropBlur 1s forwards';
-  document.getElementById('contact_container').style.animation = 'openContactForm 1s forwards'; // 2s = duration
-}
-function closeContactAnim(){ // Closing Contact Form
-  document.getElementById('center').style.animation = 'disableBackdropBlur 1s forwards';
-  document.getElementById('contact_container').style.animation = 'closeContactForm 1s forwards'; // 2s = duration
-}
+function btnHoverTransition(txt, btn, mleft){ // Transition of Color Change ( Button / Text )
+    btn.style.marginLeft = mleft + 'px';
+    txt.style.transition = '0.5s';
+    btn.style.transition = '0.5s';
+  }

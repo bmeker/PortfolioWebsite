@@ -1,17 +1,275 @@
-*{ padding: 0%; margin: 0%;}
+* { padding: 0%; margin: 0%; overflow: hidden;}
 
-body { /* Background Code */
-    height: 100vh; 
-    width: 100vw; 
-    overflow: hidden; 
-    background: radial-gradient(circle at center center, rgba(31,31,31,255) 0%, rgba(28,28,28,255) 30%, rgba(20,20,20,255) 38%, rgba(16,16,16,255) 45%, rgba(5,5,5,255) 100%);
-    background-repeat: none;
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+    background-image: url(../images/background.svg);
+    background-size: 100%;
+    background-repeat:repeat-y;
 }
 
-img { max-width: 100%; height: auto; width: auto\9; bottom: 0px; }
+/* Container */
+.content_container {
+    display: flex;
 
-#bg { pointer-events: none; }
-#bg_image{ position: absolute; overflow: hidden; z-index: -1; }
+    height: 100vh;
+    width: 100vw;
+}
 
-:root{ --hue-deg: 0deg; } /* Only Used for Color Change of Shirt */
-#bg_shirt{ position: absolute; z-index: 2; filter: hue-rotate(var(--hue-deg));}
+/* Button */
+.content_button {
+
+    /* border: dotted red 1px; */
+
+    /* Width/Height - Fit Content of Div */
+
+        height: fit-content;
+        width: 35vh;
+
+    /* Flex Position of Div */
+    justify-self: flex-start;
+    align-self: center;
+
+    /* Flex Position of Div Content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    /*  Flex Order */
+    order: 1;
+
+    /* Styling */
+    
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    /* padding: 15px; */
+    margin-right: 10px;
+
+}
+.btn {
+    width: 280px;
+    /* Styling */
+    color: white;
+    border: none;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 34px;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    /* border-radius: 20px; */
+    padding: 5px;
+    /* margin-right: 20px; */
+    
+}
+a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{ 
+    transition: background-position .3s;
+    background-position: 100% 0%;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 200% 100%;
+    position: relative;
+}
+#aboutme_text { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
+#knowledge_text { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
+#resume_text { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
+#project_text { background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); }
+#github_text { background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); }
+#contact_text { background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); } 
+
+
+/* ROOT */
+:root{
+    --hue-deg : 0deg;
+}
+
+/* Image */
+.content_image {
+    /* Width/Height - Fit Content of Div */
+    width: fit-content;
+    height: fit-content;
+
+    /* Flex Position of Div */
+    justify-self: flex-end;
+    align-self: flex-end;
+
+    /* Flex Position of Div Content */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    /*  Flex Order */
+    order: 3;
+}
+#image_me{
+    position: absolute;
+}
+#image_shirt {
+    filter: hue-rotate(var(--hue-deg));
+}
+
+/* Content Section*/
+.content_box {
+    
+    position: relative;
+    /* Width/Height is everyhting that is not used! */
+    flex: 1;
+
+    /*  Flex Order */
+    order: 2;
+
+    /* Styling */
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 80px 0px;
+    border-radius: 50px;
+}
+
+/* About Me */
+.content_aboutme{
+
+    visibility: hidden;
+
+    position: absolute;
+    /* border: dotted red 1px; */
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Contact */
+.content_contact {
+
+    position: absolute;
+    visibility: hidden;
+
+    /* border: dotted green 1px; */
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    /* Styling */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 24px;
+}
+label {
+    display: block;
+    margin: 10px 0px 5px 0px;
+}
+input, textarea{
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8); ;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid black 2px;
+    border-radius: 10px;
+    color: black;
+}
+#reference {
+    height: 430px;
+    resize: none;
+}
+#submit {
+    background-color: transparent;
+    color: white;
+    border: solid white 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    font-size: 20px;
+}
+#submit:hover{
+    color: green;
+    border-color: green;
+    transition: 0.5s;
+}
+
+/* Knowledge */
+.content_knowledge {
+
+    position: absolute;
+    visibility: hidden;
+    /* border: solid red 5px; */
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content:space-evenly;
+    align-items:flex-start;
+    padding: 40px;
+}
+#_text{
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    color: white;
+}
+.ratingCircle{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    /* color: powderblue; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.textCentering {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    align-items: center;
+    /* border: solid red 1px; */
+}
+/* Ratings */
+#r10 {
+    color: rgb(79, 219, 100);
+    background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
+    conic-gradient(rgb(79, 219, 100) 0%, rgb(79, 219, 100) 100%, transparent 100%, transparent 100%) border-box;
+}
+#r8 {
+    color: rgb(117, 224, 133);
+    background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
+    conic-gradient(rgb(117, 224, 133) 0%, rgb(117, 224, 133) 80%, transparent 80%, transparent 100%) border-box;
+}
+#r7 {
+    color: rgb(126, 219, 79);
+    background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
+    conic-gradient(rgb(126, 219, 79) 0%, rgb(126, 219, 79) 70%, transparent 70%, transparent 100%) border-box;
+}
+#r6 {
+    color: rgb(163, 219, 79);
+    background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
+    conic-gradient(rgb(163, 219, 79) 0%, rgb(163, 219, 79) 60%, transparent 60%, transparent 100%) border-box;
+}
+#r5 {
+    color: rgb(184, 219, 79);
+    background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
+    conic-gradient(rgb(184, 219, 79) 0%, rgb(184, 219, 79) 50%, transparent 50%, transparent 100%) border-box;
+}
