@@ -24,6 +24,16 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
   knowledge : document.getElementById('content_knowledge'),
   aboutme : document.getElementById('content_aboutme')};
 
+  function contentSelector(btn){
+  var contentToShow = contentIds[btn.id];
+    for (var key in contentIds){ // Hide All Content
+      contentIds[key].style.visibility = 'hidden';
+    }
+    if(contentToShow){
+      contentToShow.style.visibility = 'visible';
+    }
+  }
+
     for (var i = 0; i < btnIds.length; i++) {
       (function(i){
         var colorDeg = colorDegree[i];  // Set Hue Deg to a Var
@@ -68,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
           contentSelector(btn);
         }
 
+        
     })(i);
     };
 
