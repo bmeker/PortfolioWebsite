@@ -13,56 +13,36 @@ body {
 /* Container */
 .content_container {
     display: flex;
-
     height: 100vh;
     width: 100vw;
 }
 
 /* Button */
 .content_button {
-
-    /* border: dotted red 1px; */
-
-    /* Width/Height - Fit Content of Div */
-
-        height: fit-content;
-        width: 35vh;
-
-    /* Flex Position of Div */
+    height: fit-content;
+    width: 35vh;
     justify-self: flex-start;
     align-self: center;
-
-    /* Flex Position of Div Content */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
-    /*  Flex Order */
     order: 1;
-
-    /* Styling */
-    
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    /* padding: 15px; */
     margin-right: 10px;
 
 }
 .btn {
     width: 280px;
-    /* Styling */
     color: white;
     border: none;
     background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 34px;
     text-align: center;
-
     background-color: rgba(0, 0, 0, 0.2);
-    /* border-radius: 20px; */
     padding: 5px;
-    /* margin-right: 20px; */
     
 }
 a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{ 
@@ -94,7 +74,6 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
     background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); 
 } 
 
-
 /* ROOT */
 :root{
     --hue-deg : 0deg;
@@ -102,20 +81,13 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 
 /* Image */
 .content_image {
-    /* Width/Height - Fit Content of Div */
     width: fit-content;
     height: fit-content;
-
-    /* Flex Position of Div */
     justify-self: flex-end;
     align-self: flex-end;
-
-    /* Flex Position of Div Content */
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
-    /*  Flex Order */
     order: 3;
 }
 #image_me{
@@ -127,15 +99,10 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 
 /* Content Section*/
 .content_box {
-    
     position: relative;
-    /* Width/Height is everyhting that is not used! */
     flex: 1;
-
-    /*  Flex Order */
     order: 2;
     height: 800px;
-    /* Styling */
     background-color: rgba(0, 0, 0, 0.3);
     margin: 80px 0px;
     border-radius: 50px;
@@ -143,47 +110,33 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 
 /* About Me */
 .content_aboutme{
-
-    visibility: hidden;
-
+    opacity: 0;
     position: absolute;
-    /* border: dotted red 1px; */
-
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-
     justify-self: center;
     align-self: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 40px;
-
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Contact */
 .content_contact {
-
     position: absolute;
-    visibility: hidden;
-
-    /* border: dotted green 1px; */
+    opacity: 0;
     height: 800px;
     width: 100%;
     box-sizing: border-box;
     resize: both;
-
     padding: 30px;
-
-    /* Styling */
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 24px;
 }
-
 label {
     display: block;
     margin: 10px 0px 5px 0px;
@@ -217,20 +170,14 @@ input, textarea{
 
 /* Knowledge */
 .content_knowledge {
-
     position: absolute;
-    visibility: hidden;
-    /* border: solid red 5px; */
-
+    opacity: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-
     justify-self: center;
     align-self: center;
-
     display: flex;
-    /* flex-direction: column; */
     justify-content:space-evenly;
     align-items:flex-start;
     padding: 40px;
@@ -246,7 +193,6 @@ input, textarea{
     width: 30px;
     border-radius: 50%;
     border: 7px solid transparent;
-    /* color: powderblue; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     display: flex;
@@ -260,7 +206,6 @@ input, textarea{
     flex-direction: column;
     flex-wrap: wrap; 
     align-items: center;
-    /* border: solid red 1px; */
 }
 /* Ratings */
 #r10 {
@@ -293,7 +238,7 @@ input, textarea{
 .content_project {
 
     position: absolute;
-    visibility: hidden;
+    opacity: 0;
 
     width: 100%;
     height: 100%;
@@ -351,3 +296,13 @@ input, textarea{
     color: greenyellow;
     border-color: greenyellow;
 }
+
+/* Keyframe */
+@keyframes FadeIn { /* Face In Contant */
+    0% {  opacity: 0;  }
+    100% {  opacity: 1; }
+}
+@keyframes FadeOut { /* Face Out Contant */
+    0% {  opacity: 1;  }
+    100% {  opacity: 0; }
+} 
