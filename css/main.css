@@ -74,12 +74,25 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
     background-size: 200% 100%;
     position: relative;
 }
-#aboutme_text { background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); }
-#knowledge_text { background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); }
-#resume_text { background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); }
-#project_text { background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); }
-#github_text { background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); }
-#contact_text { background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); } 
+/* Button Gradient */
+#aboutme_text { 
+    background: linear-gradient(90deg, rgb(162, 211, 219) 0%, rgb(162, 211, 219) 50%, white 50%, white 100%); 
+}
+#knowledge_text { 
+    background: linear-gradient(90deg, rgb(206, 173, 222) 0%, rgb(206, 173, 222) 50%, white 50%, white 100%); 
+}
+#resume_text { 
+    background: linear-gradient(90deg, rgb(222, 173, 210) 0%, rgb(222, 173, 210) 50%, white 50%, white 100%); 
+}
+#project_text { 
+    background: linear-gradient(90deg, rgb(219, 206, 160) 0%, rgb(219, 206, 160) 50%, white 50%, white 100%); 
+}
+#github_text { 
+    background: linear-gradient(90deg, rgb(196, 217, 156) 0%, rgb(196, 217, 156) 50%, white 50%, white 100%); 
+}
+#contact_text { 
+    background: linear-gradient(90deg, rgb(155, 212, 201) 0%, rgb(155, 212, 201) 50%, white 50%, white 100%); 
+} 
 
 
 /* ROOT */
@@ -274,4 +287,63 @@ input, textarea{
     color: rgb(184, 219, 79);
     background: conic-gradient(rgba(25,25,25,1) 0%, rgba(25,25,25,1) 100%) padding-box,
     conic-gradient(rgb(184, 219, 79) 0%, rgb(184, 219, 79) 50%, transparent 50%, transparent 100%) border-box;
+}
+
+/* Project */
+.content_project {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+
+    padding: 3%;
+
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card {
+    /* outline: solid red 1px;  */
+    height: 350px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 0px 10px;
+    box-sizing: border-box;
+
+    border: solid white 1px;
+    border-radius: 30px;
+}
+#cardTitle {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.descTxt {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+#txt { 
+    color: powderblue; 
+}
+.github {
+    color: white;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 5px 0px;
+    width: 100%;
+    border: solid white 1px;
+    border-radius: 20px;
+}
+.github::after {
+    content: ' \00A0 \00BB';
+}
+.github:hover{
+    color: greenyellow;
+    border-color: greenyellow;
 }

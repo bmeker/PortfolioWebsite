@@ -33,7 +33,7 @@
         <!-- Content Box -->
         <div class="content_box">
 
-            <div class="content_aboutme" id="content_aboutme">
+            <div class="content_aboutme" id="content_aboutme"> <!-- ABOUT ME-->
                 <h1  style=" color: white; font-size: 28px">Hallo, Ich bin der..</h1>
                 <h2 id="txtRight" style=" color: lightskyblue; font-size: 50px;">BAHADIR MUHAMMET EKER <span style="color:white; font-size: 24px;">24/yo</span></h2>
                 <h1 style="color: white; font-size: 28px; align-self: flex-end;">Ich bin ein..</h1>
@@ -46,7 +46,7 @@
                 </p>
             </div>
 
-            <div class="content_contact" id="content_contact">
+            <div class="content_contact" id="content_contact"> <!-- CONTACT -->
                 <form>
                     <label for="fname">Name</label>
                     <input type="text" id="fname" name="fullname" placeholder="Ihr Name..">
@@ -66,16 +66,29 @@
                 </form>
             </div>
 
-            <div class="content_project" id="content_project">
-                <!-- PROJECT -->
+            <div class="content_project" id="content_project"> <!-- PROJECT -->
+                    <div class="card"> <!-- Waldaufforstung-->
+                        <h1 id="cardTitle"> Waldaufforstung App </h1>
+                        <a class="descTxt" id="txt"> Sprache <br> <span class='descTxt'>Java</span></a>
+                        <a class="descTxt" id="txt"> IDE <br> <span class='descTxt'>Android Studio</span></a>
+                        <a class="descTxt" id="txt"> Info <br> <span class='descTxt'>Optimaler Baum-Pflanzrechner pro Hektar</span></a>
+                         <button class="github" id="git_c1" onclick="window.open('https://github.com/ChaoticPower/Waldaufforstung', '_blank'); return false;"> GITHUB </button>
+                    </div>
+
+                    <div class="card"> <!-- Portolio Webseite-->
+                        <h1 id="cardTitle"> Portfolio Webseite </h1>
+                        <a class="descTxt" id="txt"> Sprache <br> <span class='descTxt'> HTML | CSS | JavaScript</span></a>
+                        <a class="descTxt" id="txt"> IDE <br> <span class='descTxt'>Visual Studio Code</span></a>
+                        <a class="descTxt" id="txt"> Info <br> <span class='descTxt'>Eine Portfolop Webseite um meine Kenntnisse zu Präsentieren</span></a>
+                         <button class="github" id="git_c2" onclick="window.open('https://github.com/ChaoticPower/PortfolioWebsite', '_blank'); return false;"> GITHUB </button>
+                    </div>
             </div>
 
             <div class="content_resume" id="content_resume">
                 <!-- RESUME -->
             </div>
 
-            <div class="content_knowledge" id="content_knowledge">
-                <!-- KNOWLEDGE -->
+            <div class="content_knowledge" id="content_knowledge">  <!-- KNOWLEDGE -->
                 <div class="textCentering">
                     <div class="ratingCircle" id="r7">7</div><a id="_text">C#</a>
                     <div class="ratingCircle" id="r7">7</div><a id="_text">JavaScript</a>
