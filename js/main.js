@@ -30,10 +30,12 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
       if ( window.getComputedStyle(contentIds[key]).getPropertyValue('opacity') === '1') // Check if Content has Opacity of 1
       {
         contentIds[key].style.animation = 'FadeOut 0.5s forwards';
+        contentIds[key].style.zIndex = '0';
       }
     }
     if(contentToShow){
       contentToShow.style.animation = 'FadeIn 0.5s forwards';
+      contentToShow.style.zIndex = '1';
     }
   }
 

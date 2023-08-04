@@ -12,6 +12,7 @@ body {
 
 /* Container */
 .content_container {
+    position: relative;
     display: flex;
     height: 100vh;
     width: 100vw;
@@ -112,6 +113,7 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 .content_aboutme{
     opacity: 0;
     position: absolute;
+    z-index: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -128,6 +130,7 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 .content_contact {
     position: absolute;
     opacity: 0;
+    z-index: 0;
     height: 800px;
     width: 100%;
     box-sizing: border-box;
@@ -172,6 +175,7 @@ input, textarea{
 .content_knowledge {
     position: absolute;
     opacity: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -236,17 +240,14 @@ input, textarea{
 
 /* Project */
 .content_project {
-
     position: absolute;
     opacity: 0;
-
+    z-index: 0;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     display: flex;
-
-    padding: 3%;
-
+    padding: 4%;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -299,10 +300,10 @@ input, textarea{
 
 /* Keyframe */
 @keyframes FadeIn { /* Face In Contant */
-    0% {  opacity: 0;  }
+    0% {  opacity: 0; }
     100% {  opacity: 1; }
 }
 @keyframes FadeOut { /* Face Out Contant */
-    0% {  opacity: 1;  }
+    0% {  opacity: 1; }
     100% {  opacity: 0; }
 } 
