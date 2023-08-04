@@ -24,13 +24,16 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
   knowledge : document.getElementById('content_knowledge'),
   aboutme : document.getElementById('content_aboutme')};
 
-  function contentSelector(btn){
+  function contentSelector(btn){ // Select Content on Button Click
   var contentToShow = contentIds[btn.id];
     for (var key in contentIds){ // Hide All Content
-      contentIds[key].style.visibility = 'hidden';
+      if ( window.getComputedStyle(contentIds[key]).getPropertyValue('opacity') === '1') // Check if Content has Opacity of 1
+      {
+        contentIds[key].style.animation = 'FadeOut 0.5s forwards';
+      }
     }
     if(contentToShow){
-      contentToShow.style.visibility = 'visible';
+      contentToShow.style.animation = 'FadeIn 0.5s forwards';
     }
   }
 
@@ -77,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
           btn.dataset.clicked = 'true'; // Set button click to True
           contentSelector(btn);
         }
-
         
     })(i);
     };
