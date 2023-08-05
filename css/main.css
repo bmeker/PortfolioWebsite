@@ -1,4 +1,4 @@
-* { padding: 0%; margin: 0%; overflow: hidden;}
+* { padding: 0; margin: 0; overflow: hidden;}
 
 body {
     height: 100vh;
@@ -21,7 +21,7 @@ body {
 /* Button */
 .content_button {
     height: fit-content;
-    width: 35vh;
+    width: 16vw;
     justify-self: flex-start;
     align-self: center;
     display: flex;
@@ -31,19 +31,19 @@ body {
     order: 1;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    margin-right: 10px;
+    margin-right: 0.5vw;
 
 }
 .btn {
-    width: 280px;
+    width: 14vw;
     color: white;
     border: none;
     background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 34px;
+    font-size: 2.125rem;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 5px;
+    padding: 0.5vh;
     
 }
 a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{ 
@@ -82,7 +82,7 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
 
 /* Image */
 .content_image {
-    width: fit-content;
+    width: 30vw;
     height: fit-content;
     justify-self: flex-end;
     align-self: flex-end;
@@ -103,9 +103,9 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
     position: relative;
     flex: 1;
     order: 2;
-    height: 800px;
+    height: 90vh;
     background-color: rgba(0, 0, 0, 0.3);
-    margin: 80px 0px;
+    margin: 5vh 0vw;
     border-radius: 50px;
 }
 
@@ -122,7 +122,7 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px;
+    padding: 2vw;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -131,21 +131,21 @@ a#aboutme_text, a#knowledge_text, a#resume_text, a#project_text, a#contact_text{
     position: absolute;
     opacity: 0;
     z-index: 0;
-    height: 800px;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
     resize: both;
-    padding: 30px;
+    padding: 2vh 2vw;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 label {
     display: block;
-    margin: 10px 0px 5px 0px;
+    margin: 1.5vh 0vw 0.5vh 0vw;
 }
 input, textarea{
-    padding: 5px;
+    padding: 0.7vh;
     background-color: rgba(255, 255, 255, 0.8); ;
     width: 100%;
     box-sizing: border-box;
@@ -154,7 +154,7 @@ input, textarea{
     color: black;
 }
 #reference {
-    height: 430px;
+    height: 50vh;
     resize: none;
 }
 #submit {
@@ -163,7 +163,7 @@ input, textarea{
     border: solid white 2px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 #submit:hover{
     color: green;
@@ -184,25 +184,24 @@ input, textarea{
     display: flex;
     justify-content:space-evenly;
     align-items:flex-start;
-    padding: 40px;
+    padding: 4vh;
 }
 #_text{
-    margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: white;
 }
 .ratingCircle{
-    height: 30px;
-    width: 30px;
+    height: 4vh;
+    width: 2vw;
     border-radius: 50%;
     border: 7px solid transparent;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    margin: 1.5vh;
 }
 .textCentering {
     gap: 10px;
@@ -247,21 +246,21 @@ input, textarea{
     height: 100%;
     box-sizing: border-box;
     display: flex;
-    padding: 4%;
+    padding: 1vw;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
 .card {
     /* outline: solid red 1px;  */
-    height: 350px;
-    width: 250px;
+    height: 35vh;
+    width: 14vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
-    padding: 0px 10px;
+    padding: 0vh 1vw;
     box-sizing: border-box;
 
     border: solid white 1px;
@@ -270,12 +269,12 @@ input, textarea{
 #cardTitle {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 .descTxt {
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
 }
 #txt { 
     color: powderblue; 
@@ -284,9 +283,9 @@ input, textarea{
     color: white;
     background-color: transparent;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    padding: 5px 0px;
-    width: 100%;
+    font-size: 1.125rem;
+    padding: 0.5vh 0vw;
+    width: 12.5vw;
     border: solid white 1px;
     border-radius: 20px;
 }
