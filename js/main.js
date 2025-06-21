@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
         btn.addEventListener("mouseover", function(){ // Mouse Hover
           document.documentElement.style.setProperty("--hue-deg", colorDeg); // Change Hue deg for the wanted Button
           txt.style.backgroundPosition = "0% 0%"; // Change background Position for Text (Color Change Animation)
-          btnHoverTransition(txt,btn,50); // Color Change Transition
+          btnHoverTransition(txt,btn,10); // Color Change Transition
         });
 
         btn.addEventListener("mouseout", function() // Mouse Out
@@ -66,19 +66,19 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
             var _btn = document.getElementById(btnId);
             var _txt = document.getElementById(txtIds[index]);
             _txt.style.backgroundPosition = '100% 0%'; // Change background Position for Text (Color Change Animation)
-            _btn.style.marginLeft = '0px'; // Remove Margin
+            _btn.style.marginTop = '0px'; // Remove Margin
             _btn.dataset.clicked = 'false'; // Set Button Click to False
           })
           btn.dataset.clicked = 'true'; // Set Button Click to true
           txt.style.backgroundPosition = '0% 0%'; // Change background Position for Text (Color Change Animation)
-          btnHoverTransition(txt,btn,50); // Color Change Transition
+          btnHoverTransition(txt,btn,10); // Color Change Transition
           contentSelector(btn); // Show and Hide different Content
         })
 
         if(btn.id == 'aboutme'){ // Have Button 'aboutme' active on first page
           document.documentElement.style.setProperty("--hue-deg", colorDeg); // Change Hue deg for the wanted Button
           txt.style.backgroundPosition = '0% 0%' // Change background Position for Text (Color Change Animation)
-          btnHoverTransition(txt,btn,50); // Color Change Transition
+          btnHoverTransition(txt,btn,10); // Color Change Transition
           btn.dataset.clicked = 'true'; // Set button click to True
           contentSelector(btn);
         }
@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
 
 });
 
-function btnHoverTransition(txt, btn, mleft){ // Transition of Color Change ( Button / Text )
-    btn.style.marginLeft = mleft + 'px';
+function btnHoverTransition(txt, btn, mtop){ // Transition of Color Change ( Button / Text )
+    btn.style.marginTop = mtop + 'px';
     txt.style.transition = '0.5s';
     btn.style.transition = '0.5s';
   }
