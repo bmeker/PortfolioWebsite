@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() { // Execute after HTML
     })(i);
     };
 
-    document.querySelector("form").addEventListener('submit', function(event){ // Button to Send Email 
+  document.querySelector("form").addEventListener('submit', function(event){ // Button to Send Email
       sendEmail();
       restart();
       return false;
@@ -99,3 +99,11 @@ function btnHoverTransition(txt, btn, mleft){ // Transition of Color Change ( Bu
     txt.style.transition = '0.5s';
     btn.style.transition = '0.5s';
   }
+
+// Reset the contact form after submission
+function restart(){
+  var form = document.querySelector('form');
+  if(form){
+    form.reset();
+  }
+}
